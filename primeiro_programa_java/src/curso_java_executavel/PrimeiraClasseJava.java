@@ -1,15 +1,23 @@
 package curso_java_executavel;
 
 public class PrimeiraClasseJava {
+	
 
 	// Main é um metodo auto-executavel em java
 	public static void main(String[] args) {
 
-		System.out.println("Meu primeiro programa em java - do Curso Formação Web");
-		System.out.println("Java é orientado a objetos");
-
-		System.out.println("Teste de commit");
-
+		
+		String nome = "Francivaldo";
+		String cpf = "041.560.953-47";
+		String telefone = "(61) 99569-3905";
+		String endereço = "Brasilia DF";
+		
+	
+		String saida = ("O aluno " + nome + " de CPF " + cpf + " e de telefone " + telefone + " mora em " + endereço + ".");
+	
+		System.out.println(saida);
+	
 	}
-
+	
+	
 }
