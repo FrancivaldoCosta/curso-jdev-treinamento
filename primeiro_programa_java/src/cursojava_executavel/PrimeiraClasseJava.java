@@ -20,7 +20,7 @@ public class PrimeiraClasseJava {
 			/* new Aluno() é uma instancia (Criação de Objeto) */
 			/* aluno1 é uma referencia para o objeto aluno */
 
-			String nome = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd + "?" );
+			String nome = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd + "?");
 			/*
 			 * String idade = JOptionPane.showInputDialog("Qual a idade? "); String
 			 * dataNascimento = JOptionPane.showInputDialog("Data de nascimento? "); String
@@ -68,22 +68,35 @@ public class PrimeiraClasseJava {
 					posicao++;
 					continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover?");
 				}
-
+					
 			}
-			
+
 			alunos.add(aluno1);
 		}
-		
+
 		for (Aluno aluno : alunos) {
-			
-			System.out.println(aluno.toString()); /* Descrição do objeto na memoria */
-			System.out.println("Média do aluno = " + aluno.getMediaNota());
-			System.out.println("Resultado = " + aluno.getAlunoAprovado2());
-			System.out.println("-----------------------------------------------------------"
-					+ "");
-			
+
+			if (aluno.getNome().equalsIgnoreCase("alex")) {
+
+				alunos.remove(aluno);
+				break;
+			} else {
+				System.out.println(aluno.toString()); /* Descrição do objeto na memoria */
+				System.out.println("Média do aluno = " + aluno.getMediaNota());
+				System.out.println("Resultado = " + aluno.getAlunoAprovado2());
+				System.out.println("---------------------------------------------------" + "");
+			}
 		}
 
+		for (Aluno aluno : alunos) {
+			System.out.println("Alunos que sobraram na lista");
+			System.out.println(aluno.getNome());
+			System.out.println("Suas materias são");
+			for (Disciplina disciplina : aluno.getDisciplinas()) {
+				System.out.println(disciplina.getDisciplina());
+				
+
+		}
 
 	}
 
