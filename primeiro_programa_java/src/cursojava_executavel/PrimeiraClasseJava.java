@@ -68,7 +68,7 @@ public class PrimeiraClasseJava {
 					posicao++;
 					continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover?");
 				}
-					
+
 			}
 
 			alunos.add(aluno1);
@@ -94,10 +94,10 @@ public class PrimeiraClasseJava {
 			System.out.println("Suas materias são");
 			for (Disciplina disciplina : aluno.getDisciplinas()) {
 				System.out.println(disciplina.getDisciplina());
-				
+
+			}
 
 		}
 
 	}
-
 }
