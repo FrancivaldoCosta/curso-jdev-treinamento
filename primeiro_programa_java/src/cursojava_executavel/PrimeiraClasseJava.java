@@ -15,7 +15,7 @@ public class PrimeiraClasseJava {
 
 		List<Aluno> alunos = new ArrayList<Aluno>();
 
-		for (int qtd = 1; qtd <= 2; qtd++) {
+		for (int qtd = 1; qtd <= 5; qtd++) {
 
 			/* new Aluno() é uma instancia (Criação de Objeto) */
 			/* aluno1 é uma referencia para o objeto aluno */
