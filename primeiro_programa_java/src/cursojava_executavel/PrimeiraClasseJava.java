@@ -93,7 +93,7 @@ public class PrimeiraClasseJava {
 			if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.APROVADO)) {
 				maps.get(StatusAluno.APROVADO).add(aluno);
 			} else if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.RECUPERACAO)) {
-				maps.get(StatusAluno.REPROVADO).add(aluno);
+				maps.get(StatusAluno.RECUPERACAO).add(aluno);
 			} else if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.REPROVADO)) {
 				maps.get(StatusAluno.REPROVADO).add(aluno); 
 
