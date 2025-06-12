@@ -15,6 +15,12 @@ public class Venda {
 	private String enderecoEntrega;
 	
 	private  BigDecimal valorTotal;
+	
+	private List<Produto> listaProdutos = new ArrayList<Produto>();
+	
+	public List<Produto> getListaProdutos() {
+		return listaProdutos;
+	}
 
 	public Long getId() {
 		return id;
@@ -55,6 +61,7 @@ public class Venda {
 	public void setValorTotal(BigDecimal valorTotal) {
 		this.valorTotal = valorTotal;
 	}
+	
 
 	@Override
 	public String toString() {
