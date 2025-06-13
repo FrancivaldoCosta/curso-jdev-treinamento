@@ -38,8 +38,5 @@ public class Produto {
 	public String toString() {
 		return "Produto [id=" + id + ", nome=" + nome + ", valor=" + valor + "]";
 	}
-	
-	
-	
-	
+
 }
