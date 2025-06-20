@@ -8,11 +8,9 @@ import cursojava.constantes.StatusAluno;
 
 public class Aluno extends Pessoa {
 
-	
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
 	public List<Disciplina> getDisciplinas() {
@@ -173,6 +171,15 @@ public class Aluno extends Pessoa {
 			return false;
 		Aluno other = (Aluno) obj;
 		return Objects.equals(nome, other.nome) && Objects.equals(numeroCpf, other.numeroCpf);
+	}
+	
+	@Override
+	public boolean pessoaMaiorIdade() {
+		return idade >= 18;
+	}
+	
+	public String msgMaiorIdade() {
+		return this.pessoaMaiorIdade() ? "Obaa aluno é maior de idade" : "Ixii vc é menor de idade";
 	}
 
 }
