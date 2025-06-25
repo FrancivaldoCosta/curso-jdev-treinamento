@@ -9,8 +9,10 @@ import javax.swing.JOptionPane;
 import cursojava.constantes.StatusAluno;
 import cursojava.interfaces.PermitirAcesso;
 import cursojava_classes.Aluno;
+import cursojava_classes.Diretor;
 import cursojava_classes.Disciplina;
 import cursojava_classes.Secretario;
+import cursojava_classesauxiliares.FuncaoAutenticacao;
 
 public class PrimeiraClasseJava {
 
@@ -20,9 +22,9 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		PermitirAcesso permitirAcesso = new Secretario(login, senha);
+		
 
-		if (permitirAcesso.autenticar()) { /* VOU TRAVAR O CONTRATO PARA AUTORIZAR SOMENTE QUEM REALMENTE TEM O CONTRATO 100% LEGITIMO */
+		if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) { /* VOU TRAVAR O CONTRATO PARA AUTORIZAR SOMENTE QUEM REALMENTE TEM O CONTRATO 100% LEGITIMO */
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
