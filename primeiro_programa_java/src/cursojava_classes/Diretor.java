@@ -43,8 +43,5 @@ public class Diretor extends Pessoa {
 	public double salario() {
 		return 3900.78;
 	}
-	
-	
-	
 
 }

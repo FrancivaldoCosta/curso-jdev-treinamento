@@ -7,8 +7,10 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 import cursojava_classes.Aluno;
 import cursojava_classes.Disciplina;
+import cursojava_classes.Secretario;
 
 public class PrimeiraClasseJava {
 
@@ -17,8 +19,10 @@ public class PrimeiraClasseJava {
 
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
+		
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 
-		if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+		if (permitirAcesso.autenticar()) { /* VOU TRAVAR O CONTRATO PARA AUTORIZAR SOMENTE QUEM REALMENTE TEM O CONTRATO 100% LEGITIMO */
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
@@ -124,6 +128,8 @@ public class PrimeiraClasseJava {
 
 			}
 
+		} else {
+			JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		}
 
 	}
