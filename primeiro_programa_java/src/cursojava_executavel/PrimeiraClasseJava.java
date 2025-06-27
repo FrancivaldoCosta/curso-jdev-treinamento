@@ -7,11 +7,9 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import cursojava.constantes.StatusAluno;
-import cursojava.interfaces.PermitirAcesso;
 import cursojava_classes.Aluno;
 import cursojava_classes.Diretor;
 import cursojava_classes.Disciplina;
-import cursojava_classes.Secretario;
 import cursojava_classesauxiliares.FuncaoAutenticacao;
 
 public class PrimeiraClasseJava {
