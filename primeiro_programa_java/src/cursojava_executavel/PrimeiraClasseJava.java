@@ -16,6 +16,8 @@ public class PrimeiraClasseJava {
 
 	// Main é um metodo auto-executavel em java
 	public static void main(String[] args) {
+		
+		try {
 
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -24,7 +26,7 @@ public class PrimeiraClasseJava {
 
 		if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) { /* VOU TRAVAR O CONTRATO PARA AUTORIZAR SOMENTE QUEM REALMENTE TEM O CONTRATO 100% LEGITIMO */
 
-			List<Aluno> alunos = new ArrayList<Aluno>();
+			List<Aluno> alunos = null;
 
 			/*
 			 * É UMA LISTA QUE DENTRO DELA TEMOS UMA CHAVE QUE IDENTIFICA UMA SEQUENCIA DE
@@ -88,6 +90,7 @@ public class PrimeiraClasseJava {
 
 				}
 
+				System.out.println("AQUI O ERRO");
 				alunos.add(aluno1);
 			}
 
@@ -131,7 +134,17 @@ public class PrimeiraClasseJava {
 		} else {
 			JOptionPane.showMessageDialog(null, "Acesso não permitido");
 		}
+		
+		/*aqui*/
+		} catch (Exception e) {
+			e.printStackTrace(); /*IMPRIME ERRO NO CONSOJE JAVA*/
+			JOptionPane.showMessageDialog(null, "Erro ao processar notas" + e.getMessage());
+			
+			 
+		}
+			
+		}
 
 	}
 
-}
+
