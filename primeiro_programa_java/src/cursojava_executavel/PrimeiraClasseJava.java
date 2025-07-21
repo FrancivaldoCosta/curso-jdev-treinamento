@@ -1,12 +1,15 @@
 package cursojava_executavel;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import curso.java.excecao.ExcecaoProcessarNota;
 import cursojava.constantes.StatusAluno;
 import cursojava_classes.Aluno;
 import cursojava_classes.Diretor;
@@ -15,28 +18,23 @@ import cursojava_classesauxiliares.FuncaoAutenticacao;
 
 public class PrimeiraClasseJava {
 
-	// Main é um metodo auto-executavel em java
+//	 Main é um metodo auto-executavel em java
 	public static void main(String[] args) {
 
 		try {
-			
-			new File("Arquivo.txt");
+
+//			lerArquivo();
 
 			String login = JOptionPane.showInputDialog("Informe o login");
 			String senha = JOptionPane.showInputDialog("Informe a senha");
 
-			if (new FuncaoAutenticacao(new Diretor(login, senha))
-					.autenticar()) { /*
-										 * VOU TRAVAR O CONTRATO PARA AUTORIZAR SOMENTE QUEM REALMENTE TEM O CONTRATO
-										 * 100% LEGITIMO
-										 */
+//			 VOU TRAVAR O CONTRATO PARA AUTORIZAR SOMENTE QUEM REALMENTE TEM O CONTRATO 100% LEGITIMO 
+			if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) {
 
 				List<Aluno> alunos = new ArrayList<Aluno>();
 
-				/*
-				 * É UMA LISTA QUE DENTRO DELA TEMOS UMA CHAVE QUE IDENTIFICA UMA SEQUENCIA DE
-				 * VALORES
-				 */
+//				  É UMA LISTA QUE DENTRO DELA TEMOS UMA CHAVE QUE IDENTIFICA UMA SEQUENCIA DE VALORES
+
 				HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
 				for (int qtd = 1; qtd <= 1; qtd++) {
@@ -142,7 +140,7 @@ public class PrimeiraClasseJava {
 			}
 
 			/* aqui */
-		} catch (NumberFormatException e) {
+		} catch (Exception e) {
 
 			StringBuilder saida = new StringBuilder();
 
@@ -162,13 +160,20 @@ public class PrimeiraClasseJava {
 
 			JOptionPane.showMessageDialog(null, "Erro de conversão de numero " + saida.toString());
 
-		} catch (NullPointerException e) {
-			JOptionPane.showMessageDialog(null, "Opaa, um null pointer exeption " + e.getClass());
-
-		} catch (Exception e) {
-			e.printStackTrace();
+		} finally { /*
+					 * SEMPRE É EXECUTADO OCORRENDO ERROS OU NÃO, por que? FINALLY SEMPRE É USADO
+					 * QUANDO PRECISA EXECUTAR UM PROCESSO ACONTECENDO ERRO OU NÃO NO SISTEMA
+					 */
+			JOptionPane.showMessageDialog(null, "Obrigado por aprender Java comigo");
 		}
 
 	}
+
+//	public static void lerArquivo() throws FileNotFoundException {
+//
+//		File file = new File("C:\\Users\\franc\\OneDrive\\DEV\\Git\\git-eclipse\\curso-jdev-treinamento\\lines.txt");
+//		Scanner scanner = new Scanner(file);
+//
+//	}
 
 }
