@@ -51,27 +51,48 @@ public class TelaTimeThread extends JDialog {
 //
 //	};
 
-	private volatile boolean running = false; /* ALTERANDO O CODIGO APOS ERRO NO STOP A PARTIR DAQUI*/
+	private volatile boolean running = false; /* ALTERANDO O CODIGO APOS ERRO NO STOP A PARTIR DAQUI */
 
 	private Runnable thread1 = new Runnable() {
-	@Override
-	public void run() {
-		while (running) {
-			SwingUtilities.invokeLater(() -> {
-				mostraTempo
-						.setText(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(Calendar.getInstance().getTime()));
-			});
+		@Override
+		public void run() {
+			while (running) {
+				SwingUtilities.invokeLater(() -> {
+					mostraTempo.setText(
+							new SimpleDateFormat("dd/MM/yyyy HH:mm.ss").format(Calendar.getInstance().getTime()));
+				});
 
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				Thread.currentThread().interrupt(); // Boa prática
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					Thread.currentThread().interrupt(); // Boa prática
+				}
 			}
 		}
-	}};
+	};
+	
+	
+	private Runnable thread2 = new Runnable() {
+		@Override
+		public void run() {
+			while (running) {
+				SwingUtilities.invokeLater(() -> {
+					mostraTempo2.setText(
+							new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(Calendar.getInstance().getTime()));
+				});
+
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					Thread.currentThread().interrupt(); // Boa prática
+				}
+			}
+		}
+	};
 
 //	PRIMEIRO CRIA O RUNNABLE PRA DEPOIS CRIAR O OBJETO
 	private Thread thread1Time;
+	private Thread thread2Time;
 
 	public TelaTimeThread() { /* Executa o que tiver dentro no momento da abertura ou execução */
 		setTitle("Minha tela de time com Thread");
@@ -118,7 +139,7 @@ public class TelaTimeThread extends JDialog {
 		jButton2.setPreferredSize(new Dimension(92, 25));
 		gridBagConstraints.gridx++;
 		jPanel.add(jButton2, gridBagConstraints);
-		
+
 //		CODIGO COMENTADO APOS O ERRO DE STOP
 //		jButton.addActionListener(new ActionListener() {
 //
@@ -136,8 +157,16 @@ public class TelaTimeThread extends JDialog {
 				running = true;
 				thread1Time = new Thread(thread1);
 				thread1Time.start();
+				
+				thread2Time = new Thread(thread2);
+				thread2Time.start();
+				
+				jButton.setEnabled(false);
+				jButton2.setEnabled(true);
 			}
 		});
+		
+		
 
 //		CODIGO COMENTADO APOS O ERRO DE STOP
 //		jButton2.addActionListener(new ActionListener() {
@@ -153,7 +182,13 @@ public class TelaTimeThread extends JDialog {
 		// ATUALIZANDO BOTÃO 2
 		jButton2.addActionListener(e -> {
 			running = false;
+			
+			jButton.setEnabled(true);
+			jButton2.setEnabled(false);
+			
 		});
+		
+		jButton2.setEnabled(false);
 
 		add(jPanel, BorderLayout.WEST);
 		/* Sempre será o último comando */
