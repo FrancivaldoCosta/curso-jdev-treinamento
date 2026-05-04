@@ -10,9 +10,9 @@ public class Pessoa {
 	private Date dataNascimento;
 	private Date dataCadastro;
 	
-	private String cpf;
 	
-			
+	
+
 	
 	public Date getDataNascimento() {
 		return dataNascimento;
