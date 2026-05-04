@@ -10,7 +10,7 @@ public class Pessoa {
 	private Date dataNascimento;
 	private Date dataCadastro;
 
-			
+	private String testeBrench;
 	
 	public Date getDataNascimento() {
 		return dataNascimento;
