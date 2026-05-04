@@ -12,9 +12,8 @@ public class Pessoa {
 	
 	
 	private String nome2;
-	private String nome3;
-	
-		
+
+			
 	
 	public Date getDataNascimento() {
 		return dataNascimento;
