@@ -10,6 +10,8 @@ public class Pessoa {
 	private Date dataNascimento;
 	private Date dataCadastro;
 
+	private String novaBranch;
+	
 	
 	public Date getDataNascimento() {
 		return dataNascimento;
