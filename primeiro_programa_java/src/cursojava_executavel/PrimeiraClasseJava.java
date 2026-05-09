@@ -5,36 +5,32 @@ public class PrimeiraClasseJava {
 	/* Main é um metodo auto executavel em Java */
 	public static void main(String[] args) {
 
-		int nota1 = 70;
-		int nota2 = 70;
-		int nota3 = 70;
-		int nota4 = 70;
+		/* Estrutura de repetição while */
 
-		int media = 0;
+		int numero = 0;
+		
+		while (numero <= 60) { /* Verifica e depois executa */
+			System.out.println("Estou imprimindo: " + numero);
+			numero ++;
+			
+		}
 
-		media = (nota1 + nota2 + nota3 + nota4) / 4;
-
-		/* Switch case: Operações exatas */
-
-		int dia = 2;
-		switch (dia) {
-		case 1:
-			System.out.println("Domingo");
-			break;
-		case 2: 
-			System.err.println("Segunda-Feira");
-			break;
-		case 3: 
-			System.err.println("Terça-Feira");
-			break;
-
-		default: System.out.println("Outro dia qualquer");
-			break;
-		}		
+		/*--------------------------------------------------------------------------------*/
+	
+		int numero2 = 0;
+		
+		
+	do {
+		System.out.println("Imprimindo: " + numero2);
+		numero2 ++;
+		
+	} while (numero2 <= 60);
 		
 		
 		
 		
+	
 	}
+	
 
 }
