@@ -2,31 +2,31 @@ package cursojava.classes;
 
 import java.util.Objects;
 
-/*Essa classe Disciplina servirá para todos os objetos e instancias de notas e materias*/ 
+/*Essa classe Disciplina servirá para todos os objetos e instancias de notas e materias*/
 public class Disciplina {
 
-	private double nota1;
-	private String disciplina1;
+	private double nota;
+	private String disciplina;
 
-	public double getNota1() {
-		return nota1;
+	public double getNota() {
+		return nota;
 	}
 
-	public void setNota1(double nota1) {
-		this.nota1 = nota1;
+	public void setNota(double nota) {
+		this.nota = nota;
 	}
 
-	public String getDisciplina1() {
-		return disciplina1;
+	public String getDisciplina() {
+		return disciplina;
 	}
 
-	public void setDisciplina1(String disciplina1) {
-		this.disciplina1 = disciplina1;
+	public void setDisciplina(String disciplina) {
+		this.disciplina = disciplina;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(disciplina1, nota1);
+		return Objects.hash(disciplina, nota);
 	}
 
 	@Override
@@ -38,13 +38,13 @@ public class Disciplina {
 		if (getClass() != obj.getClass())
 			return false;
 		Disciplina other = (Disciplina) obj;
-		return Objects.equals(disciplina1, other.disciplina1)
-				&& Double.doubleToLongBits(nota1) == Double.doubleToLongBits(other.nota1);
+		return Objects.equals(disciplina, other.disciplina)
+				&& Double.doubleToLongBits(nota) == Double.doubleToLongBits(other.nota);
 	}
 
 	@Override
 	public String toString() {
-		return "Disciplina [nota1=" + nota1 + ", disciplina1=" + disciplina1 + "]";
+		return "Disciplina [nota=" + nota + ", disciplina=" + disciplina + "]";
 	}
 
 }

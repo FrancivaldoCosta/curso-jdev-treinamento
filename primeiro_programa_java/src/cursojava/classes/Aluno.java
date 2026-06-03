@@ -132,16 +132,23 @@ public class Aluno {
 	
 	/* Método que retorna a média do aluno */
 	public double getMediaNota() {
-		return 0;
+		
+		double somaNotas = 0.0;
+		
+		for (Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+		}
+		
+		return somaNotas / disciplinas.size();
 	}
 	
 	/* Método que retorna true pra aprovado e false pra reprovado */
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNota();
 		if (media >= 70) {
-			return true;
+			return true; /*Aprovado*/
 		} else {
-			return false;
+			return false; /*Reprovado*/
 		}
 		
 	}
@@ -149,8 +156,13 @@ public class Aluno {
 	
 	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
-		if (media >= 70) {
-			return "Aluno está aprovado";
+		if (media >= 50) {
+			if (media >= 70) {
+				return "Aluno está aprovado";
+			} else {
+				return "Aluno em recuperação";
+			}
+				
 		} else {
 			return "Aluno está reprovado";
 		}
