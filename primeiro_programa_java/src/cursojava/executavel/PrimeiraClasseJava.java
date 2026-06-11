@@ -77,15 +77,27 @@ public class PrimeiraClasseJava {
 		}
 
 		for (Aluno aluno : alunos) {
-			
-			if (aluno.getNome().equalsIgnoreCase("alex")) { 
-			System.out.println(aluno.toString()); // Descrição do objeto na memória
-			System.out.println("Média do aluno = " + aluno.getMediaNota());
-			System.out.println("Resultado = " + aluno.getAlunoAprovado2());
 
-			System.out.println("------------------------------------------------------------");
-			break;
+			if (aluno.getNome().equalsIgnoreCase("alex")) {
+				alunos.remove(aluno);
+				break;
+			} else {
+				System.out.println(aluno.toString()); // Descrição do objeto na memória
+				System.out.println("Média do aluno = " + aluno.getMediaNota());
+				System.out.println("Resultado = " + aluno.getAlunoAprovado2());
+
+				System.out.println("------------------------------------------------------------");
+			}
+		}
+		
+		for (Aluno aluno : alunos) {
+			// Evita impressão duplicada do nome do aluno; manter apenas a linha descritiva
+			System.out.println("Alunos que sobraram na lista ");
+			System.out.println(aluno.getNome());
+			System.out.println("Suas matérias são: ");
 			
+			for (Disciplina disciplina : aluno.getDisciplinas()) {
+				System.out.println(disciplina.getDisciplina());
 			}
 		}
 	}
